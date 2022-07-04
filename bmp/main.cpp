@@ -30,7 +30,7 @@ struct KoloryRGB {
 
 int main(int arc, char * argv[]) {
 
-    FILE* f = fopen(argv[1], "rb");
+    FILE* f = fopen("test.bmp", "rb");
 
     if (f == nullptr)
     {
@@ -95,9 +95,8 @@ int main(int arc, char * argv[]) {
     fread(&Picture.biClrImportant, sizeof(Picture.biClrImportant), 1, f);
     printf("\n Wazne kolory w palecie: %d", Picture.biClrImportant);
 
-    /*************************/
-
-    FILE* w = fopen("negative.bmp", "wb");
+  
+    FILE* w = fopen("test-negative.bmp", "wb");
     if (w == nullptr)
     {
         printf("\n\n Can't open the file");
@@ -136,7 +135,7 @@ int main(int arc, char * argv[]) {
         fseek(f, i, SEEK_SET);
         fseek(w, i, SEEK_SET);
         fread(&bmpImg, 3, 1, f);
-        bmpImg = INT_MAX - bmpImg; //Tworzymy negatyw
+        bmpImg = INT_MAX - bmpImg; 
         fwrite(&bmpImg, 3, 1, w);
     }
 
