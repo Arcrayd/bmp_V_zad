@@ -30,7 +30,7 @@ struct KoloryRGB {
 
 int main(int arc, char * argv[]) {
 
-    FILE* f = fopen("komputer.bmp", "rb");
+    FILE* f = fopen("UE5.bmp", "rb");
 
     if (f == nullptr)
     {
@@ -96,7 +96,7 @@ int main(int arc, char * argv[]) {
     printf("\n Wazne kolory w palecie: %d", Picture.biClrImportant);
 
   
-    FILE* w = fopen("komputer-negative.bmp", "wb");
+    FILE* w = fopen("UE5-negative.bmp", "wb");
     if (w == nullptr)
     {
         printf("\n\n Can't open the file");
